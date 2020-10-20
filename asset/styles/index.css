@@ -1,0 +1,91 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Amiko', sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* START - COLOR THEME */
+.blue-color{
+    color: #32455B;
+}
+
+.bluesky-color{
+    color: #5293E7;
+}
+
+.lightgrayblue-color{
+    color: #E0E7EF;
+}
+
+.lightblue-color{
+    color: #A5C5ED;
+}
+
+.pink-color{
+    color: #E85275;
+}
+
+.menu-active{
+    background-color: #A5C5ED;
+}
+
+.pink-bg{
+    background-color: #E85275;
+}
+
+.bluesky-bg{
+    background-color: #5293E7;
+}
+
+.lightgrayblue-bg{
+    background-color: #E0E7EF;
+}
+
+/* END - COLOR THEME */
+
+/* START - FONT STYLE */
+.w-400{
+    font-weight: 400;
+}
+
+.w-600{
+    font-weight: 600;
+}
+
+.w-700{
+    font-weight: 700;
+}
+
+.menu-text{
+    font-size: 20px;
+}
+
+.header-text{
+    font-size: 50px;
+}
+
+/* END - FONT STYLE */
+
+/* START - BUTTON STYLE */
+.btn-login{
+    border: 2px solid #E85275;
+    border-radius: 15px;
+}
+/* END - BUTTON STYLE */
+
+/* START - IMAGE STYLE */
+.img-landing{
+    position: absolute;
+}
+
+/* END - IMAGE STYLE */
+
+/* START - COMPONENT STYLE */
+
+
+/* END - COMPONENT STYLE */
