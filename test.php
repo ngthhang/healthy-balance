@@ -1,3 +1,3 @@
 <?php
-    require_once('views/layout/landing_index.php');
+    require_once('views/layout/index.php');
 ?>
