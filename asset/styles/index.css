@@ -10,8 +10,8 @@ html, body{
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    background-color: #f5f5f5;
 }
-
 /* START - COLOR THEME */
 .blue-color{
     color: #32455B;
@@ -20,7 +20,6 @@ html, body{
 .bluesky-color{
     color: #5293E7;
 }
-
 .lightgrayblue-color{
     color: #E0E7EF;
 }
@@ -28,26 +27,47 @@ html, body{
 .lightblue-color{
     color: #A5C5ED;
 }
-
+.orange-color{
+    color: #FB9A33;
+}
 .pink-color{
     color: #E85275;
 }
-
+.red-color{
+    color: #EB5757;
+}
+.lightgray-color{
+    color: #E0E0E0;
+}
+.gray-color{
+    color: #828282;
+}
 .menu-active{
     background-color: #A5C5ED;
 }
-
+.red-bg{
+    background-color: #EB5757;
+}
 .pink-bg{
     background-color: #E85275;
 }
-
+.blue-bg{
+    background-color: #32455B;
+}
 .bluesky-bg{
     background-color: #5293E7;
 }
-
+.orange-bg{
+    background-color: #FB9A33;
+}
 .lightgrayblue-bg{
     background-color: #E0E7EF;
 }
+
+.main-bg{
+    background-color: #f5f5f5;
+}
+
 
 /* END - COLOR THEME */
 
@@ -71,7 +91,18 @@ html, body{
 .header-text{
     font-size: 50px;
 }
-
+.t-18{
+    font-size: 18px;
+}
+.t-20{
+    font-size: 20px;
+}
+.t-40{
+    font-size: 40px;
+}
+.t-14{
+    font-size: 14px;
+}
 /* END - FONT STYLE */
 
 /* START - BUTTON STYLE */
@@ -103,5 +134,83 @@ html, body{
 .staff-offline{
     background-color: #C4C4C4;
 }
+.content-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.promotion-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 20px;
+}
 
+/* NOTI */
+.noti{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.noti .header {
+    width: 100%;
+    text-align: left;
+    border-bottom: 2px solid #32455B;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+.noti .header span {
+    background:#fff;
+    padding-right: 20px;
+}
+
+.noti .content {
+    border: 3px solid #E85275;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.noti .content span {
+    font-size: 18px;
+}
+
+/* CARD */
+.card{
+    border-radius: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.card img{
+    border-radius: 20px 0px 0px 20px;
+}
+.card .holder{
+    border-radius: 0px 20px 20px 0px;
+    background-color: #FAFAFA
+}
+
+.card .btn{
+    color: #C4C4C4;
+}
+.card .btn:hover{
+    color: #E85275;
+}
+.btn-radio{
+    height:15px;
+    width:15px;
+    border-radius: 50%;
+}
+.course-info .header{
+    border-bottom: 1px solid rgba(149, 157, 165, 0.2);
+}
+.course-info table .label{
+    background-color: #F2F2F2;
+    color: #32455B;
+    font-weight: bold;
+}
+
+.shadow{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 /* END - COMPONENT STYLE */

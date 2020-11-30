@@ -17,6 +17,9 @@ require_once('config/config.php');
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <!-- Google Font Amiko -->
     <link href="https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- MATERIAL ICONS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <title>Healthy&Balance</title>
     <link rel="shortcut icon" href="asset/images/logo_header.svg" />
 
@@ -32,11 +35,11 @@ require_once('config/config.php');
 </head>
 
 <body>
-    <div class='container-fluid p-0'>
+    <div class='h-100 container-fluid p-0'>
         <div class='row h-100 w-100 m-0'>
             <!-- START MENU SIDE BAR -->
-            <div class='mt-3 col-xl-2 d-none d-md-block col-md-2 col-lg-2 p-0 h-100 sticky-top'>
-                <!-- MENU SETTING WEBMAIL -->
+            <div class='bg-white pt-3 col-xl-2 d-none d-md-block col-md-2 col-lg-2 p-0 h-100 sticky-top'>
+                <!-- MENU SETTING -->
                 <form method="get" name="menuSide" action="index.php">
                     <input type="text" name="controller" value="" id='controller' style="display: none">
                     <input type="text" name="action" value="" id='action' style="display: none">
@@ -92,13 +95,11 @@ require_once('config/config.php');
                 </form>
             </div>
 
-
             <!-- END MENU SIDE BAR -->
 
-            <!-- START LIST MAIL DISPLAY -->
+            <!-- START CONTENT DISPLAY -->
             <?= $content ?>
-            <!-- END LIST MAIL DISPLAY -->
-
+            <!-- END CONTENT DISPLAY -->
         </div>
     </div>
 </body>
