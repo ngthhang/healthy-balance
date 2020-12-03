@@ -8,7 +8,8 @@
         'landing' => array('index','error','gallery','blogs'),
         'login' => array('index', 'logup', 'logout', 'login_staff'),
         'home' => array('index', 'bill', 'error', 'inbox','profile','schedule'),
-        'course' => array('view')
+        'course' => array('view'),
+        'bill' => array('view')
     );
 
     $support_controller_staff = array(

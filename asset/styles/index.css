@@ -213,4 +213,13 @@ html, body{
 .shadow{
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+
+.bill tbody tr:hover {
+    background-color: #e0f7fa
+}
+
+.bill thead {
+    background-color: #5293E7;
+    color: white;
+}
 /* END - COMPONENT STYLE */
