@@ -9,7 +9,7 @@
         'login' => array('index', 'logup', 'logout', 'login_staff'),
         'home' => array('index', 'bill', 'error', 'inbox','profile','schedule'),
         'course' => array('view'),
-        'bill' => array('view')
+        'bill' => array('view', 'payment')
     );
 
     $support_controller_staff = array(

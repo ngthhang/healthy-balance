@@ -37,5 +37,9 @@
             </tr>
         </table>
     </div>
-    <span class="my-3 px-4 w-700 align-self-end btn blue-bg text-white">RETURN</span>
+    <form action="index.php" class="my-3 w-700 align-self-end" name='return' method='GET'>
+        <input type="text" name="controller" value="home" id='controller' style="display: none">
+        <input type="text" name="action" value="bill" id='action' style="display: none">
+        <button class="px-4 btn blue-bg text-white">RETURN</button>
+    </form>
 </div>

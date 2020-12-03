@@ -1,7 +1,11 @@
 <div class="d-flex flex-column align-items-center justify-content-start col-xl-10 col-md-10 col-lg-10 p-0 content-wrapper px-5 pt-5 mt-2">
     <div class="d-flex flex-row align-items-center justify-content-between w-100 mb-5">
         <h5 class="pink-color w-700">BILL&PAYMENT</h5>
-        <span class="btn blue-bg text-white font-weight-bold px-4">MAKE A PAYMENT</span>
+        <form action="index.php" method="GET" name="payment">
+            <input type="text" name="controller" value="bill" id='controller' style="display: none">
+            <input type="text" name="action" value="payment" id='action' style="display: none">
+            <button class="btn blue-bg text-white font-weight-bold px-4">MAKE A PAYMENT</button>
+        </form>
     </div>
     <table class="table bill bg-white rounded">
         <thead>

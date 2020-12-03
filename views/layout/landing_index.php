@@ -28,7 +28,7 @@
 
     <head>
 
-    <body>
+    <body class="bg-white">
         <!-- LANDING MENU PAGE -->
         <form action="index.php" method="GET" name="landingMenu">
             <div class="sticky-top bg-white container-fluid d-flex flex-row justify-content-around align-items-center px-4">

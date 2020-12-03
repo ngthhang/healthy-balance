@@ -7,5 +7,9 @@
         function view(){
             $this->render('view', array());
         }
+        function payment()
+        {
+            $this->render('payment', array());
+        }
     }
 ?>

@@ -63,7 +63,9 @@ html, body{
 .lightgrayblue-bg{
     background-color: #E0E7EF;
 }
-
+.lightgray-bg{
+    background-color: #E0E0E0;
+}
 .main-bg{
     background-color: #f5f5f5;
 }
@@ -208,6 +210,7 @@ html, body{
     background-color: #F2F2F2;
     color: #32455B;
     font-weight: bold;
+    max-width: 100px;
 }
 
 .shadow{
@@ -215,11 +218,20 @@ html, body{
 }
 
 .bill tbody tr:hover {
-    background-color: #e0f7fa
+    background-color: #e0f7fa;
+}
+
+.bill td, .bill th{
+    padding: 20px;
 }
 
 .bill thead {
     background-color: #5293E7;
     color: white;
+}
+
+.card table input::placeholder{
+    color: #C4C4C4;
+    font-size:14px;
 }
 /* END - COMPONENT STYLE */

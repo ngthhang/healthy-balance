@@ -79,12 +79,12 @@ require_once('config/config.php');
                                     <p class='m-0 label-text'>BILL&PAYMENTS</p>
                                 </td>
                             </tr>
-                            <tr id='inbox' onclick="onRouteUser(this.id)">
-                                <td class='<?= $class_style[3] ?> pl-4 py-3 d-flex'>
+                            <!-- <tr id='inbox' onclick="onRouteUser(this.id)">
+                                <td class=' pl-4 py-3 d-flex'>
                                     <p class='m-0 label-text'>INBOX</p>
                                     <span class='staff-status staff-active'></span>
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr id='logout' onclick="onRouteUser(this.id)">
                                 <td class='table-body pl-4 py-3'>
                                     <p class='m-0 label-text pink-color'>LOG OUT</p>
