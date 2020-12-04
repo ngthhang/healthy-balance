@@ -124,15 +124,15 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`STAFF_ID`, `ROLE`, `NAME`, `EMAIL`, `PHONE`, `NATION`, `BIRTH`, `IMAGE`, `DESCRIPTION`,`PASSWORD`) VALUES
-(1, 2, 'Lê Văn Mạnh', 'lvmanh', '511514145', 'Việt Nam', '1998-07-05', '.asset/images/staffs/1.jpg', 'lorem isum lorem isum lorem isum lorem isum','e10adc3949ba59abbe56e057f20f883e'),
-(2, 2, 'Nguyễn Thu Thủy', 'ntthuy@gmail.com', '4856975369', 'Việt Nam', '2000-11-04', '.asset/images/staffs/1.jpg', 'lorem isum lorem isum lorem isum lorem isum','e10adc3949ba59abbe56e057f20f883e'),
-(3, 2, 'Nguyễn Thu Hương', 'ntthuong@gmail.com', '4895768996', 'Việt Nam', '1998-08-07', '.asset/images/staffs/3.jpg', 'loreaiuhf aif a jfb qtuq  jwb qug asdnfb  qwtb awef qw','e10adc3949ba59abbe56e057f20f883e'),
-(4, 2, 'Cường Kiến Quốc', 'ckquoc@gmail.com', '485791352', 'Việt Nam', '1986-08-09', '.asset/images/staffs/1.jpg', 'ads as r ert tr  owieh qeur uiqre  qwuh iqure qerhgh qeruhg uqierg qre','e10adc3949ba59abbe56e057f20f883e'),
-(5, 3, 'Võ Tấn Sang', 'vtsang@gmail.com', '589657486', 'Việt Nam', '2000-11-23', '.asset/images/staffs/5.jpg', 'asdfa adf asf a sdf  afa sdf','e10adc3949ba59abbe56e057f20f883e'),
-(6, 5, 'Trương Thế Văn', 'ttvan@gmail.com', '49858942656', 'Việt Nam', '1985-08-09', '.asset/images/staffs/7.jpg', NULL,'e10adc3949ba59abbe56e057f20f883e'),
-(7, 1, 'Nguyện Nhật Cường', 'nncuong@gmail.com', '46499656587', 'Việt Nam', '2020-11-13', '.asset/images/staffs/8.jpg', NULL,'e10adc3949ba59abbe56e057f20f883e'),
-(8, 1, 'Đoàn Đức', 'dduc@gmail.com', '78956546816', 'Việt Nam', '1985-08-09', '.asset/images/staffs/9.jpg', NULL,'e10adc3949ba59abbe56e057f20f883e'),
-(9, 4, 'Nguyễn Ánh', 'nanh@gmail.com', '4869746454868', 'Việt Nam', '1955-07-09', '.asset/images/staffs/10.jpg', NULL,'e10adc3949ba59abbe56e057f20f883e');
+(1, 2, 'Lê Văn Mạnh', 'lvmanh', '511514145', 'Việt Nam', '1998-07-05', 'asset/images/staffs/1.svg', 'lorem isum lorem isum lorem isum lorem isum','e10adc3949ba59abbe56e057f20f883e'),
+(2, 2, 'Nguyễn Thu Thủy', 'ntthuy@gmail.com', '4856975369', 'Việt Nam', '2000-11-04', 'asset/images/staffs/2.svg', 'lorem isum lorem isum lorem isum lorem isum','e10adc3949ba59abbe56e057f20f883e'),
+(3, 2, 'Nguyễn Thu Hương', 'ntthuong@gmail.com', '4895768996', 'Việt Nam', '1998-08-07', 'asset/images/staffs/3.svg', 'loreaiuhf aif a jfb qtuq  jwb qug asdnfb  qwtb awef qw','e10adc3949ba59abbe56e057f20f883e'),
+(4, 2, 'Cường Kiến Quốc', 'ckquoc@gmail.com', '485791352', 'Việt Nam', '1986-08-09', 'asset/images/staffs/4.svg', 'ads as r ert tr  owieh qeur uiqre  qwuh iqure qerhgh qeruhg uqierg qre','e10adc3949ba59abbe56e057f20f883e'),
+(5, 3, 'Võ Tấn Sang', 'vtsang@gmail.com', '589657486', 'Việt Nam', '2000-11-23', 'asset/images/staffs/5.svg', 'asdfa adf asf a sdf  afa sdf','e10adc3949ba59abbe56e057f20f883e'),
+(6, 5, 'Trương Thế Văn', 'ttvan@gmail.com', '49858942656', 'Việt Nam', '1985-08-09', 'asset/images/staffs/7.svg', NULL,'e10adc3949ba59abbe56e057f20f883e'),
+(7, 1, 'Nguyện Nhật Cường', 'nncuong@gmail.com', '46499656587', 'Việt Nam', '2020-11-13', 'asset/images/staffs/8.svg', NULL,'e10adc3949ba59abbe56e057f20f883e'),
+(8, 1, 'Đoàn Đức', 'dduc@gmail.com', '78956546816', 'Việt Nam', '1985-08-09', 'asset/images/staffs/9.svg', NULL,'e10adc3949ba59abbe56e057f20f883e'),
+(9, 4, 'Nguyễn Ánh', 'nanh@gmail.com', '4869746454868', 'Việt Nam', '1955-07-09', 'asset/images/staffs/10.svg', NULL,'e10adc3949ba59abbe56e057f20f883e');
 
 -- --------------------------------------------------------
 
@@ -157,7 +157,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`USER_ID`, `USERNAME`, `NAME`, `EMAIL`, `PHONE`, `NATION`, `BIRTH`, `IMAGE`, `PASSWORD`) VALUES
-(1, 'nnanh', 'Nguyễn Ngọc Ánh', 'nnanh@gmail.com', '1515151515', 'Việt Nam', '1990-11-24', '.asset/images/customers/1.jpg','e10adc3949ba59abbe56e057f20f883e'),
+(1, 'nnanh', 'Nguyễn Ngọc Ánh', 'nnanh@gmail.com', '1515151515', 'Việt Nam', '1990-11-24', 'asset/images/customers/1.svg','e10adc3949ba59abbe56e057f20f883e'),
 (2, 'nmhung', 'Nguyễn Mạnh Hùng', 'nmhung@gmail.com', '4892498565', 'Việt Nam', '1995-11-06', NULL,'e10adc3949ba59abbe56e057f20f883e');
 
 --

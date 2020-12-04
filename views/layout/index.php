@@ -56,7 +56,7 @@ require_once('config/config.php');
                         <tbody>
                             <tr>
                                 <td class='p-0 d-flex align-items-center justify-content-center'>
-                                    <img src="<?= $avatar ?>" alt='avatar' class='img-fluid avatar' />
+                                    <img src="<?= $image ?>" class='img-fluid avatar' />
                                 </td>
                             </tr>
                             <tr id='profile' onclick="onRouteUser(this.id)">
@@ -79,12 +79,6 @@ require_once('config/config.php');
                                     <p class='m-0 label-text'>BILL&PAYMENTS</p>
                                 </td>
                             </tr>
-                            <!-- <tr id='inbox' onclick="onRouteUser(this.id)">
-                                <td class=' pl-4 py-3 d-flex'>
-                                    <p class='m-0 label-text'>INBOX</p>
-                                    <span class='staff-status staff-active'></span>
-                                </td>
-                            </tr> -->
                             <tr id='logout' onclick="onRouteUser(this.id)">
                                 <td class='table-body pl-4 py-3'>
                                     <p class='m-0 label-text pink-color'>LOG OUT</p>

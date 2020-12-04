@@ -1,6 +1,5 @@
 <?php
-
-// require_once('models/User.php');
+require_once('models/User.php');
 // require_once('models/Mail.php');
 // require_once('models/Conversation.php');
 // require_once('models/Spam.php');
@@ -55,18 +54,15 @@ class BaseController
             // $content = ob_get_clean();
             // require_once('views/layout/admin_index.php');
         } else {
-            // get info current user 
-            // $current_user = str_replace('@gmail.com', '', $_SESSION['email']);
-            // $current_user = substr($current_user, 0, 13) . '...';
-            // $user = User::getCurrentUser($_SESSION['email']);
-            // if (is_null($user->avatar) || $user->avatar === '') {
-            //     $avatar = 'asset/images/avatar/1.png';
-            // } else {
-            //     $avatar = $user->avatar;
-            // }
-            // $current_user_id = $user->id;
-            $avatar = 'asset/images/landing/1.png';
-            $current_user = 'ngthhang';
+            //get info current user
+            $current_user = str_replace('@gmail.com', '', $_SESSION['email']);
+            $user = User::getCurrentUser($_SESSION['email']);
+            if (is_null($user->image) || $user->image === '') {
+                $image = 'asset/images/customers/default.png';
+            } else {
+                $image = $user->image;
+            }
+            $current_user_id = $user->id;
             $all_view = array('index', 'schedule', 'bill', 'inbox');
             $class_style = array();
             foreach ($all_view as $i) {
