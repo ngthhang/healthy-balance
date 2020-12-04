@@ -33,7 +33,7 @@ CREATE TABLE `bill` (
   `BILL_ID` int(11) NOT NULL,
   `USER_ID` int(11) NOT NULL,
   `DATE_PAYMENT` date NOT NULL,
-  `PAYMENT` int(11) NOT NULL,
+  `PAYMENT` bit(1) NOT NULL DEFAULT b'0',
   `COURSE_ID` int(11) NOT NULL,
   `DISCOUNT` int(11) DEFAULT 0,
   `FEE` int(11) NOT NULL
@@ -44,8 +44,8 @@ CREATE TABLE `bill` (
 --
 
 INSERT INTO `bill` (`BILL_ID`, `USER_ID`, `DATE_PAYMENT`, `PAYMENT`, `COURSE_ID`, `DISCOUNT`, `FEE`) VALUES
-(1, 2, '2020-11-29', 250000, 1, 0, 0),
-(2, 1, '2020-11-11', 1500000, 2, 0, 0);
+(1, 2, '2020-11-29', 1, 1, 0, 250000),
+(2, 1, '2020-11-11', 0, 2, 20, 1500000);
 
 -- --------------------------------------------------------
 
@@ -115,23 +115,24 @@ CREATE TABLE `staff` (
   `NATION` varchar(100) NOT NULL,
   `BIRTH` date NOT NULL,
   `IMAGE` varchar(1000) NOT NULL,
-  `DESCRIPTION` varchar(1000) DEFAULT NULL
+  `DESCRIPTION` varchar(1000) DEFAULT NULL,
+  `PASSWORD` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `staff`
 --
 
-INSERT INTO `staff` (`STAFF_ID`, `ROLE`, `NAME`, `EMAIL`, `PHONE`, `NATION`, `BIRTH`, `IMAGE`, `DESCRIPTION`) VALUES
-(1, 2, 'Lê Văn Mạnh', 'lvmanh', '511514145', 'Việt Nam', '1998-07-05', '.asset/images/staffs/1.jpg', 'lorem isum lorem isum lorem isum lorem isum'),
-(2, 2, 'Nguyễn Thu Thủy', 'ntthuy@gmail.com', '4856975369', 'Việt Nam', '2000-11-04', '.asset/images/staffs/1.jpg', 'lorem isum lorem isum lorem isum lorem isum'),
-(3, 2, 'Nguyễn Thu Hương', 'ntthuong@gmail.com', '4895768996', 'Việt Nam', '1998-08-07', '.asset/images/staffs/3.jpg', 'loreaiuhf aif a jfb qtuq  jwb qug asdnfb  qwtb awef qw'),
-(4, 2, 'Cường Kiến Quốc', 'ckquoc@gmail.com', '485791352', 'Việt Nam', '1986-08-09', '.asset/images/staffs/1.jpg', 'ads as r ert tr  owieh qeur uiqre  qwuh iqure qerhgh qeruhg uqierg qre'),
-(5, 3, 'Võ Tấn Sang', 'vtsang@gmail.com', '589657486', 'Việt Nam', '2000-11-23', '.asset/images/staffs/5.jpg', 'asdfa adf asf a sdf  afa sdf'),
-(6, 5, 'Trương Thế Văn', 'ttvan@gmail.com', '49858942656', 'Việt Nam', '1985-08-09', '.asset/images/staffs/7.jpg', NULL),
-(7, 1, 'Nguyện Nhật Cường', 'nncuong@gmail.com', '46499656587', 'Việt Nam', '2020-11-13', '.asset/images/staffs/8.jpg', NULL),
-(8, 1, 'Đoàn Đức', 'dduc@gmail.com', '78956546816', 'Việt Nam', '1985-08-09', '.asset/images/staffs/9.jpg', NULL),
-(9, 4, 'Nguyễn Ánh', 'nanh@gmail.com', '4869746454868', 'Việt Nam', '1955-07-09', '.asset/images/staffs/10.jpg', NULL);
+INSERT INTO `staff` (`STAFF_ID`, `ROLE`, `NAME`, `EMAIL`, `PHONE`, `NATION`, `BIRTH`, `IMAGE`, `DESCRIPTION`,`PASSWORD`) VALUES
+(1, 2, 'Lê Văn Mạnh', 'lvmanh', '511514145', 'Việt Nam', '1998-07-05', '.asset/images/staffs/1.jpg', 'lorem isum lorem isum lorem isum lorem isum','e10adc3949ba59abbe56e057f20f883e'),
+(2, 2, 'Nguyễn Thu Thủy', 'ntthuy@gmail.com', '4856975369', 'Việt Nam', '2000-11-04', '.asset/images/staffs/1.jpg', 'lorem isum lorem isum lorem isum lorem isum','e10adc3949ba59abbe56e057f20f883e'),
+(3, 2, 'Nguyễn Thu Hương', 'ntthuong@gmail.com', '4895768996', 'Việt Nam', '1998-08-07', '.asset/images/staffs/3.jpg', 'loreaiuhf aif a jfb qtuq  jwb qug asdnfb  qwtb awef qw','e10adc3949ba59abbe56e057f20f883e'),
+(4, 2, 'Cường Kiến Quốc', 'ckquoc@gmail.com', '485791352', 'Việt Nam', '1986-08-09', '.asset/images/staffs/1.jpg', 'ads as r ert tr  owieh qeur uiqre  qwuh iqure qerhgh qeruhg uqierg qre','e10adc3949ba59abbe56e057f20f883e'),
+(5, 3, 'Võ Tấn Sang', 'vtsang@gmail.com', '589657486', 'Việt Nam', '2000-11-23', '.asset/images/staffs/5.jpg', 'asdfa adf asf a sdf  afa sdf','e10adc3949ba59abbe56e057f20f883e'),
+(6, 5, 'Trương Thế Văn', 'ttvan@gmail.com', '49858942656', 'Việt Nam', '1985-08-09', '.asset/images/staffs/7.jpg', NULL,'e10adc3949ba59abbe56e057f20f883e'),
+(7, 1, 'Nguyện Nhật Cường', 'nncuong@gmail.com', '46499656587', 'Việt Nam', '2020-11-13', '.asset/images/staffs/8.jpg', NULL,'e10adc3949ba59abbe56e057f20f883e'),
+(8, 1, 'Đoàn Đức', 'dduc@gmail.com', '78956546816', 'Việt Nam', '1985-08-09', '.asset/images/staffs/9.jpg', NULL,'e10adc3949ba59abbe56e057f20f883e'),
+(9, 4, 'Nguyễn Ánh', 'nanh@gmail.com', '4869746454868', 'Việt Nam', '1955-07-09', '.asset/images/staffs/10.jpg', NULL,'e10adc3949ba59abbe56e057f20f883e');
 
 -- --------------------------------------------------------
 
@@ -147,16 +148,17 @@ CREATE TABLE `user` (
   `PHONE` varchar(20) NOT NULL,
   `NATION` varchar(100) NOT NULL,
   `BIRTH` date NOT NULL,
-  `IMAGE` varchar(1000) DEFAULT NULL
+  `IMAGE` varchar(1000) DEFAULT NULL,
+  `PASSWORD` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `user`
 --
 
-INSERT INTO `user` (`USER_ID`, `USERNAME`, `NAME`, `EMAIL`, `PHONE`, `NATION`, `BIRTH`, `IMAGE`) VALUES
-(1, 'nnanh', 'Nguyễn Ngọc Ánh', 'nnanh@gmail.com', '1515151515', 'Việt Nam', '1990-11-24', '.asset/images/customers/1.jpg'),
-(2, 'nmhung', 'Nguyễn Mạnh Hùng', 'nmhung@gmail.com', '4892498565', 'Việt Nam', '1995-11-06', NULL);
+INSERT INTO `user` (`USER_ID`, `USERNAME`, `NAME`, `EMAIL`, `PHONE`, `NATION`, `BIRTH`, `IMAGE`, `PASSWORD`) VALUES
+(1, 'nnanh', 'Nguyễn Ngọc Ánh', 'nnanh@gmail.com', '1515151515', 'Việt Nam', '1990-11-24', '.asset/images/customers/1.jpg','e10adc3949ba59abbe56e057f20f883e'),
+(2, 'nmhung', 'Nguyễn Mạnh Hùng', 'nmhung@gmail.com', '4892498565', 'Việt Nam', '1995-11-06', NULL,'e10adc3949ba59abbe56e057f20f883e');
 
 --
 -- Chỉ mục cho các bảng đã đổ
