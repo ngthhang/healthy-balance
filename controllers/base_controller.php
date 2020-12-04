@@ -1,13 +1,9 @@
 <?php
 require_once('models/User.php');
-// require_once('models/Mail.php');
-// require_once('models/Conversation.php');
-// require_once('models/Spam.php');
-// require_once('models/Star.php');
-// require_once('models/Draft.php');
-// require_once('models/Trash.php');
-// require_once('models/BlockUser.php');
-// require_once('models/Admin.php');
+require_once('models/Staff.php');
+require_once('models/Bill.php');
+require_once('models/Course.php');
+require_once('models/JoinCourse.php');
 class BaseController
 {
     protected $name;

@@ -63,4 +63,21 @@ class JoinCourse
         $stm->close();
         return $status;
     }
+
+    public static function checkUserJoinCourse($user_id, $course_id)
+    {
+        $sql = "SELECT * FROM JOIN_COURSE WHERE COURSE_ID = ? AND USER_ID = ?";
+        $db = DB::getDB();
+        $stm = $db->prepare($sql);
+        $stm->bind_param('ii', $course_id, $user_id);
+        $status = $stm->execute();
+        if ($status) {
+            $result = $stm->get_result();
+            while ($i = $result->fetch_array()) {
+                return new JoinCourse($i['USER_ID'], $i['COURSE_ID']);
+            }
+        }
+        $stm->close();
+        return null;
+    }
 }
