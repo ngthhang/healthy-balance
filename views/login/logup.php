@@ -13,44 +13,47 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <title>Healthy&Balance</title>
-    <link rel="shortcut icon" href="asset/images/icons/logo.png" />
+    <link rel="shortcut icon" href="asset/images/logo_header.svg" />
     <link rel="stylesheet" type="text/css" href="asset/styles/login.css">
     <link rel="stylesheet" type="text/css" href="asset/styles/index.css">
     <script src="asset/scripts/login.js"></script>
 </head>
 <?php
-// require_once('config/config.php');
-// require_once(ROOT . '\models\User.php');
+require_once('config/config.php');
+require_once(ROOT . '\models\User.php');
 
-// if (isset($_POST['logup'])) {
-//     header('Content-Type: text/html; charset=UTF-8');
+if (isset($_POST['logup'])) {
+    header('Content-Type: text/html; charset=UTF-8');
 
-//     // get data from logup 
-//     $username = addslashes($_POST['username']);
-//     $phone = addslashes($_POST['userphone']);
-//     $email = addslashes($_POST['usermail']);
-//     $avatar = addslashes($_POST['useravatar']);
-//     $password = addslashes($_POST['userpassword']);
+    // get data from logup 
+    $name = addslashes($_POST['name']);
+    $email = addslashes($_POST['usermail']);
+    $phone = addslashes($_POST['userphone']);
+    $nation = addslashes($_POST['usernation']);
+    $birth = addslashes($_POST['birth']);
+    $image = addslashes($_POST['userimage']);
+    $password = addslashes($_POST['userpassword']);
 
-//     //hash password 
-//     $password = md5($password);
+    //hash password 
+    $password = md5($password);
 
-//     //check if user have account in db
-//     $check_exist = User::checkUserExist($email);
-//     if ($check_exist) {
-//         echo "<script>alert('This email have already registered')</script>";
-//     } else {
-//         //add new user to db
-//         $status = User::addUser($username, $avatar, $phone, $email, $password);
-//         if ($status) {
-//             echo "<script>alert('Sign up successfully!')</script>";
-//             $_SESSION['email'] = $email;
-//             redirect('index.php');
-//         } else {
-//             echo "<script>alert('Sign up failed, please try again!')</script>";
-//         }
-//     }
-// }
+    //check if user have account in db
+    $check_exist = User::checkUserExist($email);
+    if ($check_exist) {
+        echo "<script>alert('This email have already registered')</script>";
+    } else {
+        //add new user to db
+        $username = str_replace('@gmail.com', '', $email);
+        $status = User::addUser($username, $name, $email, $phone, $nation, $birth, $image, $password);
+        if ($status) {
+            echo "<script>alert('Sign up successfully!')</script>";
+            $_SESSION['email'] = $email;
+            redirect('index.php');
+        } else {
+            echo "<script>alert('Sign up failed, please try again!')</script>";
+        }
+    }
+}
 ?>
 
 <body>
@@ -63,15 +66,19 @@
                     <h2 class='font-weight-bold mb-5'>Sign up to <span class='pink-color'>Healthy&Balance</span></h2>
                     <div class="form-group mb-3">
                         <label for="username" class='font-weight-bold'>Your name:</label>
-                        <input type="text" class="form-control login-input" id="username" onclick="onFocus()" name="username">
+                        <input type="text" class="form-control login-input" id="name" onclick="onFocus()" name="name">
                     </div>
                     <div class="form-group mb-3">
                         <label for="userphone" class='font-weight-bold'>Phone number:</label>
                         <input type="number" class="form-control login-input" id="userphone" onclick="onFocus()" name="userphone">
                     </div>
                     <div class="form-group mb-3">
+                        <label for="userphone" class='font-weight-bold'>Birth:</label>
+                        <input type="date" class="form-control login-input" id="birth" onclick="onFocus()" name="birth">
+                    </div>
+                    <div class="form-group mb-3">
                         <label for="useravatar" class='font-weight-bold'>Your Avatar:</label>
-                        <input type="text" class="form-control login-input" id="useravatar" onclick="onFocus()" name="useravatar">
+                        <input type="text" class="form-control login-input" id="userimage" onclick="onFocus()" name="userimage">
                     </div>
                     <div class="form-group mb-3">
                         <label for="useravatar" class='font-weight-bold'>Your nation:</label>
@@ -101,5 +108,4 @@
         </div>
     </div>
 </body>
-
 </html>

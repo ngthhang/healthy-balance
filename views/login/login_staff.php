@@ -13,30 +13,30 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <title>Healthy&Balance</title>
-    <link rel="shortcut icon" href="asset/images/icons/logo.png" />
+    <link rel="shortcut icon" href="asset/images/logo_header.svg" />
     <link rel="stylesheet" type="text/css" href="asset/styles/login.css">
     <link rel="stylesheet" type="text/css" href="asset/styles/index.css">
     <script src="asset/scripts/login.js"></script>
 </head>
 <?php
-// require_once('config/config.php');
-// require_once(ROOT . '\models\Admin.php');
-// if (isset($_POST['login'])) {
-//     $usermail = addslashes($_POST['email']);
-//     $password = addslashes(md5($_POST['pwd']));
+require_once('config/config.php');
+require_once(ROOT . '\models\Staff.php');
+if (isset($_POST['login'])) {
+    $usermail = addslashes($_POST['email']);
+    $password = addslashes(md5($_POST['pwd']));
 
-//     if (Admin::checkAdminExist($usermail)) {
-//         if (Admin::checkLogin($usermail, $password)) {
-//             echo "<script>alert('Log in successfully!')</script>";
-//             $_SESSION['email_admin'] = $usermail;
-//             redirect('index.php?');
-//         } else {
-//             echo "<script>alert('Password is not correct, please try again')</script>";
-//         }
-//     } else {
-//         echo "<script>alert('Email is not exist in database, please try again')</script>";
-//     }
-// }
+    if (Staff::checkStaffExist($usermail)) {
+        if (Staff::checkLogin($usermail, $password)) {
+            echo "<script>alert('Log in successfully!')</script>";
+            $_SESSION['email_staff'] = $usermail;
+            redirect('index.php');
+        } else {
+            echo "<script>alert('Password is not correct, please try again')</script>";
+        }
+    } else {
+        echo "<script>alert('Email is not exist in database, please try again')</script>";
+    }
+}
 ?>
 
 <body>

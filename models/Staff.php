@@ -41,7 +41,7 @@ class Staff
 
     public static function getSize()
     {
-        $sql = 'SELECT MAX(ID) AS TOTALSTAFF FROM STAFF';
+        $sql = 'SELECT MAX(STAFF_ID) AS TOTALSTAFF FROM STAFF';
         $db = DB::getDB();
         $stm = $db->query($sql);
         return $stm->fetch_array();

@@ -13,6 +13,6 @@
     }
 
     function redirect($link){
-        header('Location: ' . HOST . '/webmail-php' .'/' . $link);
+        header('Location: ' . HOST . '/healthy&balance' .'/' . $link);
     }
 ?>

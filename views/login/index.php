@@ -13,31 +13,29 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <title>Healthy&Balance</title>
-    <link rel="shortcut icon" href="asset/images/icons/logo.png" />
+    <link rel="shortcut icon" href="asset/images/logo_header.svg" />
     <link rel="stylesheet" type="text/css" href="asset/styles/login.css">
     <link rel="stylesheet" type="text/css" href="asset/styles/index.css">
     <script src="asset/scripts/login.js"></script>
 </head>
 <?php
-// require_once('config/config.php');
-// require_once(ROOT . '\models\User.php');
-// if (isset($_POST['login'])) {
-//     $usermail = addslashes($_POST['email']);
-//     $password = addslashes(md5($_POST['pwd']));
-
-//     if (User::checkBlockUser($usermail)) {
-//         echo "<script>alert('This Email blocked by admin')</script>";
-//     } else if (User::checkUserExist($usermail)) {
-//         if (User::checkLogin($usermail, $password)) {
-//             $_SESSION['email'] = $usermail;
-//             redirect('index.php');
-//         } else {
-//             echo "<script>alert('Password is not correct, please try again')</script>";
-//         }
-//     } else {
-//         echo "<script>alert('Email is not exist in database, please try again')</script>";
-//     }
-// }
+require_once('config/config.php');
+require_once(ROOT . '\models\User.php');
+if (isset($_POST['login'])) {
+    $usermail = addslashes($_POST['email']);
+    $password = addslashes(md5($_POST['pwd']));
+    
+    if (User::checkUserExist($usermail)) {
+        if (User::checkLogin($usermail, $password)) {
+            $_SESSION['email'] = $usermail;
+            redirect('index.php');
+        } else {
+            echo "<script>alert('Password is not correct, please try again')</script>";
+        }
+    } else {
+        echo "<script>alert('Email is not exist in database, please try again')</script>";
+    }
+}
 ?>
 
 <body>

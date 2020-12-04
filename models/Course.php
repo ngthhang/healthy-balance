@@ -47,7 +47,7 @@ class Course
 
     public static function getSize()
     {
-        $sql = 'SELECT MAX(ID) AS TOTALCOURSE FROM COURSE';
+        $sql = 'SELECT MAX(COURSE_ID) AS TOTALCOURSE FROM COURSE';
         $db = DB::getDB();
         $stm = $db->query($sql);
         return $stm->fetch_array();

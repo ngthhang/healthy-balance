@@ -35,7 +35,7 @@ require_once('config/config.php');
         }
 
         public static function getSize(){
-            $sql = 'SELECT MAX(ID) AS TOTALUSER FROM USER';
+            $sql = 'SELECT MAX(USER_ID) AS TOTALUSER FROM USER';
             $db = DB::getDB();
             $stm = $db->query($sql);
             return $stm->fetch_array();
@@ -71,13 +71,13 @@ require_once('config/config.php');
             return null;
         }
 
-        public static function addUser($id,$username,$name,$email,$phone,$nation,$birth,$image,$password){
-            $sql = 'INSERT INTO USER VALUES(?,?,?,?,?,?,?,?)';
+        public static function addUser($username,$name,$email,$phone,$nation,$birth,$image,$password){
+            $sql = 'INSERT INTO USER VALUES(?,?,?,?,?,?,?,?,?)';
             $db = DB::getDB();
             $total_user = User::getSize();
             $id = $total_user['TOTALUSER'] + 1;
             $stm = $db->prepare($sql);
-            $stm->bind_param('isssssss', $id, $username, $name, $email, $phone, $nation, $birth, $image, $password);
+            $stm->bind_param('issssssss', $id, $username, $name, $email, $phone, $nation, $birth, $image, $password);
             $result = $stm->execute();
             $stm->close();
             return $result;

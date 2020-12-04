@@ -35,7 +35,7 @@ class Bill
 
     public static function getSize()
     {
-        $sql = 'SELECT MAX(ID) AS TOTALBILL FROM BILL';
+        $sql = 'SELECT MAX(BILL_ID) AS TOTALBILL FROM BILL';
         $db = DB::getDB();
         $stm = $db->query($sql);
         return $stm->fetch_array();

@@ -1,4 +1,3 @@
 <?php
-    require_once('models/Course.php');
-    print_r(Course::getCourseAvailable());
+    require_once('models/User.php');
 ?>
