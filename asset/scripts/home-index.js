@@ -60,6 +60,20 @@ function changeUserData() {
     return true
 }
 
+function makePayment(){
+    var radios = document.getElementsByName("course");
+    for (var i = 0, length = radios.length; i < length; i++) {
+        if (radios[i].checked) {
+            var courseId = radios[i].value;
+            $(".id_course").val(courseId);
+            $(".controller").val("bill");
+            $(".action").val("payment");
+            document.payment.submit();        
+            break;
+        }
+    }
+}
+
 function viewInfo(id) {
     $(".id_course").val(id);
     $(".controller").val("course");
@@ -102,4 +116,8 @@ function registerCourseInSchedule(courseId) {
     document.viewCourseInfo.submit();
 }
 
+function viewBill(billId) {
+    $(".id_bill").val(billId);
+    document.detailBill.submit();
+}
 

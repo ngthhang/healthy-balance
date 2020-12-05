@@ -238,6 +238,12 @@ html, body{
 .display-no-data{
     height: 200px;
     background-color: white;
+}
 
+.label1{
+    background-color: #F2F2F2;
+    color: #32455B;
+    font-weight: bold;
+    width: 200px;
 }
 /* END - COMPONENT STYLE */

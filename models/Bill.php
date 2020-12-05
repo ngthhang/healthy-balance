@@ -59,12 +59,15 @@ class Bill
         return null;
     }
 
-    public static function addBill($user_id, $date, $payment, $course_id, $discount, $fee){
+    public static function addBill($user_id, $payment, $course_id, $discount, $fee){
         $sql = "INSERT INTO BILL VALUES(?,?,?,?,?,?,?)";
         $db = DB::getDB();
-        $id = Bill::getSize() + 1;
+        $total_bill = Bill::getSize();
+        $id = $total_bill['TOTALBILL'] + 1;
+        date_default_timezone_set('Etc/GMT-7');
+        $date = date('Y-m-d h:i:s', time());
         $stm = $db->prepare($sql);
-        $stm->bind_param('iississ', $id, $user_id, $date, $payment, $course_id, $discount, $fee);
+        $stm->bind_param('iisiiii', $id, $user_id, $date, $payment, $course_id, $discount, $fee);
         $result = $stm->execute();
         $stm->close();
         return $result;
