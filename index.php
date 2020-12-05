@@ -8,7 +8,7 @@
         'landing' => array('index', 'error', 'gallery', 'blogs'),
         'login' => array('index', 'logup', 'logout', 'login_staff'),
         'home' => array('index', 'bill', 'error', 'inbox', 'profile', 'schedule'),
-        'course' => array('view'),
+        'course' => array('view','cancel','register'),
         'bill' => array('view', 'payment')
     );
 

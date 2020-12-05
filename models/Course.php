@@ -104,6 +104,17 @@ class Course
         return $result;
     }
 
+    public static function updateSlotById($id, $slot)
+    {
+        $sql = "UPDATE COURSE SET SLOT = ? WHERE COURSE_ID = ?";
+        $db = DB::getDB();
+        $stm = $db->prepare($sql);
+        $stm->bind_param('ii', $slot, $id);
+        $result = $stm->execute();
+        $stm->close();
+        return $result;
+    }
+
     public static function deleteCourseById($id)
     {
         $sql = "DELETE FROM COURSE WHERE COURSE_ID = ?";

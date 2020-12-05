@@ -59,3 +59,47 @@ function changeUserData() {
     }
     return true
 }
+
+function viewInfo(id) {
+    $(".id_course").val(id);
+    $(".controller").val("course");
+    $(".action").val("view");
+    document.viewCourseInfo.submit();
+}
+
+function back(controller, action) {
+    $(".controller").val(controller);
+    $(".action").val(action);
+    document.formCourseView.submit();
+}
+
+function cancelCourse(courseId) {
+    $(".id_course").val(courseId);
+    $(".controller").val("course");
+    $(".action").val("cancel");
+    document.formCourseView.submit();
+}
+
+function cancelCourseInSchedule(courseId) {
+    $(".id_course").val(courseId);
+    $(".controller").val("course");
+    $(".action").val("cancel");
+    document.viewCourseInfo.submit();
+}
+
+
+function registerCourse(courseId) {
+    $(".id_course").val(courseId);
+    $(".controller").val("course");
+    $(".action").val("register");
+    document.formCourseView.submit();
+}
+
+function registerCourseInSchedule(courseId) {
+    $(".id_course").val(courseId);
+    $(".controller").val("course");
+    $(".action").val("register");
+    document.viewCourseInfo.submit();
+}
+
+
