@@ -79,7 +79,7 @@ class Staff
         return null;
     }
 
-    public static function addStaff($id,$role, $name, $email, $phone, $nation, $birth, $image, $description, $password)
+    public static function addStaff($role, $name, $email, $phone, $nation, $birth, $image, $description, $password)
     {
         $sql = 'INSERT INTO STAFF VALUES(?,?,?,?,?,?,?,?,?,?)';
         $db = DB::getDB();

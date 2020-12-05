@@ -164,3 +164,18 @@ function deleteCourse(id) {
     $(".action").val("delete");
     document.viewCourseInfo.submit();
 }
+
+
+function editInfoPt(id) {
+    $(".pt_id").val(id);
+    $(".controller").val("instructor");
+    $(".action").val("edit");
+    document.viewInstructorInfo.submit();
+}
+
+function deleteInstructor(id) {
+    $(".pt_id").val(id);
+    $(".controller").val("instructor");
+    $(".action").val("delete");
+    document.viewInstructorInfo.submit();
+}

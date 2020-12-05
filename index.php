@@ -16,7 +16,7 @@
         'login' => array('index', 'logup', 'logout', 'login_staff'),
         'course' => array('staff_view','edit','add','delete'),
         'customer' => array('view', 'edit', 'add'),
-        'instructor' => array('edit', 'view', 'add'),
+        'instructor' => array('edit', 'add','delete'),
         'staff' => array('bill_payment','course','customer','instructor','error','profile')
     );
 

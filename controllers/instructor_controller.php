@@ -6,10 +6,6 @@ class InstructorController extends BaseController
     {
         $this->name = 'instructor';
     }
-    function view()
-    {
-        $this->render('view', array());
-    }
     function add()
     {
         $this->render('add', array());
@@ -18,5 +14,10 @@ class InstructorController extends BaseController
     function edit()
     {
         $this->render('edit', array());
+    }
+
+    function delete()
+    {
+        $this->render('delete', array());
     }
 }
