@@ -38,9 +38,9 @@ class BaseController
             $current_user = str_replace('@gmail.com', '', $_SESSION['email_staff']);
             $user = Staff::getCurrentStaff($_SESSION['email_staff']);
             if (is_null($user->image) || $user->image === '') {
-                $image = 'asset/images/staffs/default.png';
+                $curr_image = 'asset/images/staffs/default.png';
             } else {
-                $image = $user->image;
+                $curr_image = $user->image;
             }
             $role = $user->role;
             $all_view = array('course', 'instructor', 'customer', 'bill_payment');

@@ -55,7 +55,7 @@ require_once('config/config.php');
                         </thead>
                         <tbody>
                             <tr>
-                                <td class='p-0 d-flex align-items-center justify-content-center'>
+                                <td onclick="onRouteUser('profile')" class='p-0 d-flex align-items-center justify-content-center'>
                                     <img src="<?= $image ?>" class='img-fluid avatar' />
                                 </td>
                             </tr>

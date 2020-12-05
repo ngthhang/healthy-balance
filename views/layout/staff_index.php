@@ -56,8 +56,8 @@ require_once('config/config.php');
                         </thead>
                         <tbody>
                             <tr>
-                                <td class='p-0 d-flex align-items-center justify-content-center'>
-                                    <img src="<?= $image ?>" class='img-fluid avatar' />
+                                <td onclick="onRouteStaff('profile')" class='p-0 d-flex align-items-center justify-content-center'>
+                                    <img src="<?= $curr_image ?>" class='img-fluid avatar' />
                                 </td>
                             </tr>
                             <tr id='profile' onclick="onRouteStaff(this.id)">
