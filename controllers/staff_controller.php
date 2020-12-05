@@ -25,8 +25,9 @@
         {
             $this->render('instructor', array());
         }
-    function profile()
-    {
-        $this->render('profile', array());
+        function profile()
+        {
+            $this->render('profile', array());
+        }
     }
-    }
+?>
