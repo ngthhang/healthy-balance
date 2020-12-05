@@ -96,8 +96,8 @@ CREATE TABLE `join_course` (
 
 INSERT INTO `join_course` (`USER_ID`, `COURSE_ID`) VALUES
 (1, 2),
-(2, 1),
-(1, 2),
+(1, 1),
+(2, 2),
 (2, 1);
 
 -- --------------------------------------------------------
@@ -124,7 +124,7 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`STAFF_ID`, `ROLE`, `NAME`, `EMAIL`, `PHONE`, `NATION`, `BIRTH`, `IMAGE`, `DESCRIPTION`,`PASSWORD`) VALUES
-(1, 2, 'Lê Văn Mạnh', 'lvmanh', '511514145', 'Việt Nam', '1998-07-05', 'asset/images/staffs/1.svg', 'lorem isum lorem isum lorem isum lorem isum','e10adc3949ba59abbe56e057f20f883e'),
+(1, 2, 'Lê Văn Mạnh', 'lvmanh@gmail.com', '511514145', 'Việt Nam', '1998-07-05', 'asset/images/staffs/1.svg', 'lorem isum lorem isum lorem isum lorem isum','e10adc3949ba59abbe56e057f20f883e'),
 (2, 2, 'Nguyễn Thu Thủy', 'ntthuy@gmail.com', '4856975369', 'Việt Nam', '2000-11-04', 'asset/images/staffs/2.svg', 'lorem isum lorem isum lorem isum lorem isum','e10adc3949ba59abbe56e057f20f883e'),
 (3, 2, 'Nguyễn Thu Hương', 'ntthuong@gmail.com', '4895768996', 'Việt Nam', '1998-08-07', 'asset/images/staffs/3.svg', 'loreaiuhf aif a jfb qtuq  jwb qug asdnfb  qwtb awef qw','e10adc3949ba59abbe56e057f20f883e'),
 (4, 2, 'Cường Kiến Quốc', 'ckquoc@gmail.com', '485791352', 'Việt Nam', '1986-08-09', 'asset/images/staffs/4.svg', 'ads as r ert tr  owieh qeur uiqre  qwuh iqure qerhgh qeruhg uqierg qre','e10adc3949ba59abbe56e057f20f883e'),

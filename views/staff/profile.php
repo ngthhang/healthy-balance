@@ -15,7 +15,7 @@ if (isset($_POST['save'])) {
         $check_exist = User::checkUserExist($email);
         if ($check_exist) {
             echo "<script>alert('This email have already registered, cant change information!')</script>";
-            redirect('index.php?controller=staff&action=profile');
+            redirect('index.php?controller=staff&action=pròu');
         }
     }
     Staff::changeStaffInfo($user->id, $user->role, $name, $email, $phone, $nation, $birth, $image, $description, $password);

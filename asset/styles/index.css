@@ -246,4 +246,12 @@ html, body{
     font-weight: bold;
     width: 200px;
 }
+.search{
+    border: 1px solid gray;
+}
+.search::placeholder{
+    color: #C4C4C4;
+    font-size:14px;
+}
+/* Style the search field */
 /* END - COMPONENT STYLE */

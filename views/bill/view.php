@@ -1,10 +1,10 @@
 <?php
 if (!isset($_GET['id_bill'])) {
-    echo "<script>alert('Mail id is not exist!')</script>";
+    echo "<script>alert('Bill id is not exist!')</script>";
     redirect('index.php?controller=home&action=bill');
 } else {
     $bill = Bill::getBillById($_GET['id_bill']);
-    $user_name = User::getUserById($user->id)->name;
+    $user_name = User::getUserById($bill->user_id)->name;
     $course = Course::getCourseById($bill->course_id);
 }
 ?>

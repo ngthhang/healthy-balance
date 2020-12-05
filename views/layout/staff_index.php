@@ -80,11 +80,6 @@ require_once('config/config.php');
                                     <p class='m-0 label-text'>CUSTOMERS</p>
                                 </td>
                             </tr>
-                            <tr id='bill_payment' onclick="onRouteStaff(this.id)">
-                                <td class='<?= $class_style[3] ?> pl-4 py-3'>
-                                    <p class='m-0 label-text'>BILL&PAYMENTS</p>
-                                </td>
-                            </tr>
                             <tr id='logout' onclick="onRouteStaff(this.id)">
                                 <td class='table-body pl-4 py-3'>
                                     <p class='m-0 label-text pink-color'>LOG OUT</p>

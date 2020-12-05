@@ -14,9 +14,11 @@
 
     $support_controller_staff = array(
         'login' => array('index', 'logup', 'logout', 'login_staff'),
+        'landing' => array('index', 'error', 'gallery', 'blogs'),
         'course' => array('staff_view','edit','add','delete'),
         'customer' => array('view', 'edit', 'add'),
         'instructor' => array('edit', 'add','delete'),
+        'bill' => array('view', 'payment'),
         'staff' => array('bill_payment','course','customer','instructor','error','profile')
     );
 

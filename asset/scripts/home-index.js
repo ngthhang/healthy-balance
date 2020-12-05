@@ -179,3 +179,9 @@ function deleteInstructor(id) {
     $(".action").val("delete");
     document.viewInstructorInfo.submit();
 }
+
+function search() {
+    $(".controller").val("customer");
+    $(".action").val("view");
+    document.searchCustomer.submit();
+}

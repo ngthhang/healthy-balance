@@ -26,6 +26,11 @@
     height: auto;
 }
 
+.customer-avatar{
+    width: 150px;
+    height: auto;
+}
+
 .profile-input{
     border: 0;
     background-color: white;
