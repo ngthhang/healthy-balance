@@ -65,11 +65,13 @@ class Course
         return $data;
     }
 
-    public static function addCourse($name, $description, $date, $start_time, $end_time, $place, $available, $slot, $payment, $price, $discount, $pt_id)
+    public static function addCourse($name, $description, $date, $start_time, $end_time, $place, $available, $payment, $price, $discount, $pt_id)
     {
         $sql = "INSERT INTO COURSE VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
         $db = DB::getDB();
-        $id = Course::getSize() + 1;
+        $total_course = Course::getSize();
+        $id = $total_course['TOTALCOURSE'] + 1;
+        $slot = 0;
         $stm = $db->prepare($sql);
         $stm->bind_param('issssssiiiiii', $id, $name, $description, $date, $start_time, $end_time, $place, $available, $slot, $payment, $price, $discount, $pt_id);
         $result = $stm->execute();
@@ -94,11 +96,11 @@ class Course
         return null;
     }
 
-    public static function updateCourseById($id, $name, $description, $date, $start_time, $end_time, $place, $available, $slot, $payment, $price, $discount, $pt_id){
-        $sql = "UPDATE COURSE SET NAME = ?, DESCRIPTION = ?, DATE = ?, START_TIME = ?, END_TIME = ?, PLACE = ?, AVAILABLE = ?, SLOT = ?, PAYMENT = ?, PRICE = ?, DISCOUNT = ?, PT_ID = ? WHERE COURSE_ID = ?";
+    public static function updateCourseById($id, $name, $description, $date, $start_time, $end_time, $place, $available, $payment, $price, $discount, $pt_id){
+        $sql = "UPDATE COURSE SET NAME = ?, DESCRIPTION = ?, DATE = ?, START_TIME = ?, END_TIME = ?, PLACE = ?, AVAILABLE = ?, PAYMENT = ?, PRICE = ?, DISCOUNT = ?, PT_ID = ? WHERE COURSE_ID = ?";
         $db = DB::getDB();
         $stm = $db->prepare($sql);
-        $stm->bind_param('ssssssiiiiiii', $name, $description, $date, $start_time, $end_time, $place, $available, $slot, $payment, $price, $discount, $pt_id, $id);
+        $stm->bind_param('ssssssiiiiii', $name, $description, $date, $start_time, $end_time, $place, $available, $payment, $price, $discount, $pt_id, $id);
         $result = $stm->execute();
         $stm->close();
         return $result;

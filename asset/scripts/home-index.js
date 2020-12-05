@@ -26,6 +26,22 @@ function onRouteUser(id) {
     document.menuSide.submit();
 }
 
+function onRouteStaff(id) {
+    if (id === 'logout') {
+        window.location.href = 'index.php?controller=login&action=logout';
+        return
+    }
+    if (id === 'landing') {
+        $('#controller').val('landing');
+        $('#action').val('index');
+    }
+    else {
+        $('#controller').val('staff');
+        $('#action').val(id);
+    }
+    document.menuStaff.submit();
+}
+
 function changeUserData() {
     let useremail = $('.useremail').val();
     let password = $('.userpassword').val();
@@ -121,3 +137,30 @@ function viewBill(billId) {
     document.detailBill.submit();
 }
 
+function viewCourse(id) {
+    $(".id_course").val(id);
+    $(".controller").val("course");
+    $(".action").val("staff_view");
+    document.viewCourseInfo.submit();
+}
+
+function editCourse(id) {
+    $(".id_course").val(id);
+    $(".controller").val("course");
+    $(".action").val("edit");
+    document.formCourseView.submit();
+}
+
+function editCourseInStaffCourse(id) {
+    $(".id_course").val(id);
+    $(".controller").val("course");
+    $(".action").val("edit");
+    document.viewCourseInfo.submit();
+}
+
+function deleteCourse(id) {
+    $(".id_course").val(id);
+    $(".controller").val("course");
+    $(".action").val("delete");
+    document.viewCourseInfo.submit();
+}

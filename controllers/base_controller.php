@@ -33,23 +33,30 @@ class BaseController
             $content = ob_get_clean();
             require_once('views/layout/landing_index.php');
         }
-        else if ($this->name == 'staff') {
-            // get info current user 
-            // $current_user = str_replace('@gmail.com', '', $_SESSION['email_admin']);
-            // $current_user = substr($current_user, 0, 13) . '...';
-            // $user = Admin::getCurrentAdmin($_SESSION['email_admin']);
-            // if (is_null($user->avatar) || $user->avatar === '') {
-            //     $avatar = 'asset/images/avatar/1.png';
-            // } else {
-            //     $avatar = $user->avatar;
-            // }
-            // $current_user_id = $user->id;
-            // $sysadmin = $user->sysadmin;
-
-            // require_once('views/' . $this->name . '/' . $view . '.php');
-            // $content = ob_get_clean();
-            // require_once('views/layout/admin_index.php');
-        } else {
+        else if(isset($_SESSION['email_staff'])) {
+            // get info current staff 
+            $current_user = str_replace('@gmail.com', '', $_SESSION['email_staff']);
+            $user = Staff::getCurrentStaff($_SESSION['email_staff']);
+            if (is_null($user->image) || $user->image === '') {
+                $image = 'asset/images/staffs/default.png';
+            } else {
+                $image = $user->image;
+            }
+            $role = $user->role;
+            $all_view = array('course', 'instructor', 'customer', 'bill_payment');
+            $class_style = array();
+            foreach ($all_view as $i) {
+                if ($view === $i) {
+                    array_push($class_style, "table-body-active");
+                } else {
+                    array_push($class_style, "table-body");
+                }
+            }
+            $class_style = array_values($class_style);
+            require_once('views/' . $this->name . '/' . $view . '.php');
+            $content = ob_get_clean();
+            require_once('views/layout/staff_index.php');
+        } else if(isset($_SESSION['email'])){
             //get info current user
             $current_user = str_replace('@gmail.com', '', $_SESSION['email']);
             $user = User::getCurrentUser($_SESSION['email']);

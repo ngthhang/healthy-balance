@@ -13,7 +13,11 @@
     );
 
     $support_controller_staff = array(
-        'login' => array('index', 'logup', 'logout', 'login_staff')
+        'login' => array('index', 'logup', 'logout', 'login_staff'),
+        'course' => array('staff_view','edit','add','delete'),
+        'customer' => array('view', 'edit', 'add'),
+        'instructor' => array('edit', 'view', 'add'),
+        'staff' => array('bill_payment','course','customer','instructor','error','profile')
     );
 
     if (isset($_SESSION['email']) || isset($_SESSION['email_staff'])) {
@@ -27,7 +31,7 @@
                 }
             } else {
                 $controller = 'staff';
-                $action = 'index';
+                $action = 'course';
             }
             if (
                 !array_key_exists($controller, $support_controller_staff) ||
@@ -48,7 +52,6 @@
                 $controller = 'home';
                 $action = 'index';
             }
-
             if (
                 !array_key_exists($controller, $support_controller) ||
                 !in_array($action, $support_controller[$controller])

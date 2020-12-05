@@ -110,6 +110,24 @@ class Staff
         return null;
     }
 
+    public static function getStaffByRole($role){
+        $sql = 'SELECT * FROM STAFF WHERE ROLE = ?';
+        $db = DB::getDB();
+        $stm = $db->prepare($sql);
+        $stm->bind_param('i', $role);
+        $status = $stm->execute();
+        $data = array();
+        if ($status) {
+            $result = $stm->get_result();
+            while ($i = $result->fetch_array()) {
+                $data[] = new Staff($i['STAFF_ID'], $i['ROLE'], $i['NAME'], $i['EMAIL'], $i['PHONE'], $i['NATION'], $i['BIRTH'], $i['IMAGE'], $i['DESCRIPTION'], $i['PASSWORD']);
+            }
+            return $data;
+        }
+        $stm->close();
+        return null;
+    }
+
     public static function getStaffById($id)
     {
         $sql = 'SELECT * FROM STAFF WHERE STAFF_ID = ?';
