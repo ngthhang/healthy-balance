@@ -45,7 +45,11 @@ CREATE TABLE `bill` (
 
 INSERT INTO `bill` (`BILL_ID`, `USER_ID`, `DATE_PAYMENT`, `PAYMENT`, `COURSE_ID`, `DISCOUNT`, `FEE`) VALUES
 (1, 2, '2020-11-29', 1, 1, 0, 250000),
-(2, 1, '2020-11-11', 0, 2, 20, 1500000);
+(2, 1, '2020-11-11', 0, 2, 20, 1500000),
+(3, 1, '2020-09-15', 1, 1, 20, 200000),
+(3, 1, '2020-10-15', 1, 1, 0, 250000),
+(3, 2, '2020-10-15', 1, 2, 0, 1500000),
+(3, 3, '2020-11-18', 1, 3, 0, 500000);
 
 -- --------------------------------------------------------
 
@@ -77,8 +81,8 @@ INSERT INTO `course` (`COURSE_ID`, `NAME`, `DESCRIPTION`, `DATE`, `START_TIME`, 
 (1, 'Yoga', 'af af af asfy 6tf y7yarf y8q7ty tq r iuehf qr  qeruh jer tuq jheg uq', '2-3-4', '18:00:00.000000', '20:00:00.000000', 'B209', 25, 5, b'00000000000', 250000, 0, 1),
 (2, 'Gym', 'ad af a qr qw qw qriu qerigq iuq ru quirwhfiu hqquwriu hwue iuwhf iuwhf whef iuqhweiufh wiue', '3-4-5', '06:00:00.000000', '08:00:00.000000', 'C502', 5, 5, b'00000000000', 1500000, 0, 2),
 (3, 'Fitness', 'qr q qeru fqueirgh uiergbje hibvi webgiuq ehrih hfq uohweu hq ', '2-4-6', '13:00:00.000000', '15:00:00.000000', 'G502', 50, 35, b'00000000000', 500000, 20, 3),
-(4, 'Gym', 'af  yg uiguh wegy f j nveb jgqurih qu qgtqge qeb', '3-5-7', '09:00:00.000000', '11:00:00.000000', 'B545', 45, 5, b'00000000000', 1200000, 10, 4);
-
+(4, 'Gym', 'af  yg uiguh wegy f j nveb jgqurih qu qgtqge qeb', '3-5-7', '09:00:00.000000', '11:00:00.000000', 'B545', 45, 5, b'00000000000', 1200000, 10, 4),
+(5, 'Cardio Dance', 'af  yg uiguh wegy f j nveb jgqurih qu qgtqge qeb', '2-4-6', '18:00:00.000000', '20:00:00.000000', 'B401', 20, 1, b'00000000000', 350000, 0, 1);
 -- --------------------------------------------------------
 
 --
@@ -98,6 +102,9 @@ INSERT INTO `join_course` (`USER_ID`, `COURSE_ID`) VALUES
 (1, 2),
 (1, 1),
 (2, 2),
+(3, 1),
+(3, 2),
+(3, 3),
 (2, 1);
 
 -- --------------------------------------------------------
@@ -157,9 +164,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`USER_ID`, `USERNAME`, `NAME`, `EMAIL`, `PHONE`, `NATION`, `BIRTH`, `IMAGE`, `PASSWORD`) VALUES
-(1, 'nnanh', 'Nguyễn Ngọc Ánh', 'nnanh@gmail.com', '1515151515', 'Việt Nam', '1990-11-24', 'asset/images/customers/1.svg','e10adc3949ba59abbe56e057f20f883e'),
-(2, 'nmhung', 'Nguyễn Mạnh Hùng', 'nmhung@gmail.com', '4892498565', 'Việt Nam', '1995-11-06', NULL,'e10adc3949ba59abbe56e057f20f883e');
-
+(1, 'nnanh', 'Nguyễn Ngọc Ánh', 'nnanh@gmail.com', '0908981211', 'Việt Nam', '1990-11-24', 'asset/images/customers/1.svg','e10adc3949ba59abbe56e057f20f883e'),
+(2, 'nmhung', 'Nguyễn Mạnh Hùng', 'nmhung@gmail.com', '0908089814', 'Việt Nam', '1995-11-06', NULL,'e10adc3949ba59abbe56e057f20f883e'),
+(3, 'ngthhang', 'Nguyễn Thuý Hằng', 'ngthhang@gmail.com', '0908089811', 'Việt Nam', '2000-10-09', 'asset/images/customers/3.svg','e10adc3949ba59abbe56e057f20f883e');
 --
 -- Chỉ mục cho các bảng đã đổ
 --
