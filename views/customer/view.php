@@ -12,7 +12,7 @@ if (isset($_GET['item'])) {
             } else {
                 $img = $user->image;
             }
-            $join_course = JoinCourse::getCourseJoinByUser($item);
+            $join_course = JoinCourse::getCourseJoinByUser($user->id);
         } else if(!is_null(User::getUserById($item)))
         {
             $user = User::getUserById($item);
